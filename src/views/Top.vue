@@ -6,7 +6,7 @@
       <div class="top__how-to">使い方です</div>
       <div class="top__catch">キャッチコピーです</div>
     </div>
-    <button class="top__login">ログインボタンです</button>
+    <router-link to="/login" tag="button">ログインページへ</router-link>
   </div>
 </template>
 
