@@ -1,9 +1,10 @@
 <template>
   <div id="app">
     <div class="header">
-      <router-link to="/">Topへ</router-link>
-      <router-link to="/login">Login画面へ</router-link>
-      <router-link to="/about">詳細ページへ</router-link>
+      <router-link class="item" to="/">Topへ</router-link>
+      <router-link class="item" to="/signup">新規登録画面へ</router-link>
+      <router-link class="item" to="/login">Login画面へ</router-link>
+      <router-link class="item" to="/about">詳細ページへ</router-link>
     </div>
     <router-view />
   </div>
@@ -29,5 +30,9 @@
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+
+.item {
+  margin-right: 8px;
 }
 </style>
