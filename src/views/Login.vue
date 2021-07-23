@@ -9,10 +9,10 @@
       </div>
       <div class="login__input-item">
         <label for="password">パスワード</label>
-        <input type="password" id="passward" v-model="password" />
+        <input type="password" id="password" v-model="password" />
         <p v-show="password">{{ password }}</p>
       </div>
-      <button class="login__button" type="button" @click="register()">
+      <button class="login__button" type="button" @click="login()">
         ログイン
       </button>
     </form>
@@ -30,18 +30,20 @@ export default {
     };
   },
   methods: {
-    register() {
+    login() {
       axios
-        .post("/accounts:signUp?key=AIzaSyD1MbhRIeaeqS3wWpp9It--yDlawDee7xc", {
-          email: this.email,
-          password: this.password,
-          returnSecureToken: true,
-        })
+        .post(
+          "/accounts:signInWithPassword?key=AIzaSyD1MbhRIeaeqS3wWpp9It--yDlawDee7xc",
+          {
+            email: this.email,
+            password: this.password,
+            returnSecureToken: true,
+          }
+        )
         .then((response) => {
-          console.log(response); //返ってきたレスポンスをログに表示
+          console.log(response);
         });
-      this.email = "";
-      this.password = "";
+      (this.email = "ログインできたよ"), (this.password = "");
     },
   },
 };
