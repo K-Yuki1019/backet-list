@@ -1,5 +1,10 @@
 <template>
   <div id="app">
+    <div class="header">
+      <router-link to="/">Topへ</router-link>
+      <router-link to="/login">Login画面へ</router-link>
+      <router-link to="/about">詳細ページへ</router-link>
+    </div>
     <router-view />
   </div>
 </template>
